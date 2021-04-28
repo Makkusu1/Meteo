@@ -7,6 +7,7 @@ const pause = document.querySelector(".btnStop")
 const reset = document.querySelector(".reset")
 const audio = document.querySelector(".sound")
 const n = new Notification ("Temps écoulé !")
+const bv = document.querySelector(".barrevert")
 
 function lancement (){
 const stopped = setInterval (()=>{
@@ -58,6 +59,11 @@ const stopped = setInterval (()=>{
 btn.style.display = "none";
 pause.style.display = "flex";
 reset.style.display = "flex"
+let seconde = Number(uniteMinute.value)
+let dizaineSeconde = Number(dizaineMinute.value*10)
+let minute = Number(uniteHeure.value*60)
+let dizaineMinutes = Number(dizaineHeure.value*600)
+bv.style.animation = `defil ${dizaineMinutes + minute + dizaineSeconde + seconde}s linear forwards`
 }
 
 btn.addEventListener( "click", lancement)
