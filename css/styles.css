@@ -107,3 +107,23 @@ p.dp {
     justify-content: center;
     align-items: center;
 }
+.barrefond {
+    width: 400px;
+    height: 35px;
+    margin-top: 75px;
+    background-color: grey;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.barrevert {
+    width: 0px;
+    height: 35px;
+    background-color: orangered;
+    border-radius: 25px; 
+    z-index: 1000; 
+} 
+@keyframes defil {
+    100% {
+        width: 400px;
+    }
+}
