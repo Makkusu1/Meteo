@@ -52,6 +52,7 @@ const stopped = setInterval (()=>{
             btn.style.display = "flex";
             pause.style.display = "none";
             reset.style.display = "none"
+            dizaineHeure.focus();
             
         }
 btn.style.display = "none";
