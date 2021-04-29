@@ -68,6 +68,14 @@ bv.style.animation = `defil ${dizaineMinutes + minute + dizaineSeconde + seconde
 }
 
 btn.addEventListener( "click", lancement)
+reset.addEventListener("click", reseted)
+function reseted (){
+    dizaineMinute.value = null
+    uniteMinute.value = null
+    dizaineHeure.value = null
+    uniteHeure.value = null
+    dizaineHeure.focus()
+}
 
 
 dizaineHeure.addEventListener("keyup",() => {
