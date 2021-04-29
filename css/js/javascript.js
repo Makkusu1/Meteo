@@ -2,13 +2,17 @@ const dizaineHeure = document.querySelector(".chooseDizaineHeure")
 const uniteHeure = document.querySelector (".chooseUniteHeure")
 const dizaineMinute = document.querySelector(".chooseDizaineMinute")
 const uniteMinute = document.querySelector (".chooseUniteMinute")
+const plein = document.querySelector (".choose")
 const btn = document.querySelector (".btn")
 const pause = document.querySelector(".btnStop")
 const reset = document.querySelector(".reset")
 const audio = document.querySelector(".sound")
 const n = new Notification ("Temps écoulé !")
 const bv = document.querySelector(".barrevert")
-
+const reprendre = document.querySelector(".reprendre")
+const expand = document.querySelector(".fa-expand")
+const agrand = document.querySelector(".agrandir")
+const inputs = document.querySelectorAll ("input")
 function lancement (){
 const stopped = setInterval (()=>{
         if (uniteMinute.value > 0) {
@@ -37,13 +41,11 @@ const stopped = setInterval (()=>{
         }
         }, 1000 )
     pause.addEventListener("click", stop)
-    reset.addEventListener("click", reseted)
-    function stop () {
+    reset.addEventListener("click", reseted )
+        function stop () {
             clearInterval(stopped)
-            btn.style.display = "flex";
             pause.style.display = "none";
-            reset.style.display = "none";
-            bv.style.animationPlayState = "paused" ;
+            reprendre.style.display = "flex";
         }
         function reseted() {
             clearInterval(stopped)
@@ -53,38 +55,37 @@ const stopped = setInterval (()=>{
             uniteHeure.value = null
             btn.style.display = "flex";
             pause.style.display = "none";
-            reset.style.display = "none"
             dizaineHeure.focus();
-            bv.style.animation = ``
+            reprendre.style.display = "none";
             
         }
 btn.style.display = "none";
 pause.style.display = "flex";
-reset.style.display = "flex"
-let seconde = Number(uniteMinute.value)
-let dizaineSeconde = Number(dizaineMinute.value*10)
-let minute = Number(uniteHeure.value*60)
-let dizaineMinutes = Number(dizaineHeure.value*600)
-bv.style.animation = `defil ${dizaineMinutes + minute + dizaineSeconde + seconde}s linear forwards`
+reset.style.display = "flex";
+reprendre.style.display = "none"
 }
-
+reprendre.addEventListener("click", lancement)
 btn.addEventListener( "click", lancement)
-reset.addEventListener("click", reseted)
-function reseted (){
-    dizaineMinute.value = null
-    uniteMinute.value = null
-    dizaineHeure.value = null
-    uniteHeure.value = null
-    dizaineHeure.focus()
+
+
+agrand.addEventListener("click", agrandir)
+function agrandir () {
+
+    plein.requestFullscreen()
 }
-
-
+reset.addEventListener("mousedown",()=> {
+    reset.classList.add("enfonce")
+})
+reset.addEventListener("mouseup",()=> {
+    reset.classList.remove("enfonce")
+})
 dizaineHeure.addEventListener("keyup",() => {
     if (dizaineHeure.value !== "") {
     uniteHeure.focus()
     if (dizaineHeure.value > 5) {
         dizaineHeure.value = 5
     }
+
 }})
 uniteHeure.addEventListener("keyup",() => {
     if (uniteHeure.value !== "") {
@@ -111,8 +112,3 @@ window.addEventListener("DOMContentLoaded", () => {
    dizaineHeure.focus()
   });
 
-
-//  dizaineHeure.addEventListener('keydown', (e) => { if (input.value.length >= 1) e.preventDefaults() })
-//  dizaineMinute.addEventListener('keydown', (e) => { if (input.value.length >= 1) e.preventDefaults() })
-//  uniteHeure.addEventListener('keydown', (e) => { if (input.value.length >= 1) e.preventDefaults() })
-//  uniteMinute.addEventListener('keydown', (e) => { if (input.value.length >= 1) e.preventDefaults() })
