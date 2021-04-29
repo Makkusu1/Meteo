@@ -52,13 +52,11 @@ p.dp {
     height: 50px;
     box-shadow: 0 0 1rem #FFF;
     border: black;
-    background-color: orange;
     margin-top: 50px;
     border-radius: 50px;
     justify-content: center;
     align-items: center;
     background-color: greenyellow;
-    transition:width 0.5s, height 0.5s;
 }
 .btnStop {
     outline-style: none;
@@ -69,7 +67,6 @@ p.dp {
     background-color: red;
     margin-top: 50px;
     border-radius: 50px;
-    transition:width 0.5s, height 0.5s;
     display: none;
     justify-content: center;
     align-items: center;
@@ -89,11 +86,9 @@ p.dp {
     background-color: blueviolet;
     margin-top: 50px;
     border-radius: 50px;
-
     display: flex;
     justify-content: center;
-    align-items: center;
-    animation: Lancer 5s linear infinite;
+    align-items: center
 }
 .barrefond {
     width: 400px;
