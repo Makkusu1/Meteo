@@ -103,7 +103,7 @@ p.dp {
     border-radius: 50px;
     animation: Lancer 5s linear infinite;
     transition:width 0.5s, height 0.5s;
-    display: FLEX;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
