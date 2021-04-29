@@ -42,7 +42,8 @@ const stopped = setInterval (()=>{
             clearInterval(stopped)
             btn.style.display = "flex";
             pause.style.display = "none";
-            reset.style.display = "none"
+            reset.style.display = "none";
+            bv.style.animationPlayState = "paused" ;
         }
         function reseted() {
             clearInterval(stopped)
