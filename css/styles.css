@@ -52,12 +52,11 @@ p.dp {
     height: 50px;
     box-shadow: 0 0 1rem #FFF;
     border: black;
-    background-color: orange;
+    background-color: greenyellow;
     margin-top: 50px;
     border-radius: 50px;
     justify-content: center;
     align-items: center;
-    animation: Lancer 5s linear infinite;
     transition:width 0.5s, height 0.5s;
 }
 .btn:hover {
@@ -65,22 +64,15 @@ p.dp {
     height: 60px;
     box-shadow: -0rem -0rem 1rem #fff;
 }
-
-@keyframes Lancer {
- 25% {background-color: red;}
-    50% {background-color: orange;}
-    75% {background-color: yellow;}
-}
 .btnStop {
     outline-style: none;
     width: 100px;
     height: 50px;
     box-shadow: 0 0 1rem #FFF;
     border: black;
-    background-color: orange;
+    background-color: red;
     margin-top: 50px;
     border-radius: 50px;
-    animation: Lancer 5s linear infinite;
     transition:width 0.5s, height 0.5s;
     display: none;
     justify-content: center;
@@ -98,11 +90,10 @@ p.dp {
     height: 50px;
     box-shadow: 0 0 1rem #FFF;
     border: black;
-    background-color: orange;
+    background-color: blueviolet;
     margin-top: 50px;
     border-radius: 50px;
     animation: Lancer 5s linear infinite;
-    transition:width 0.5s, height 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
